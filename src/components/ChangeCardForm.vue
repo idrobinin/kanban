@@ -21,8 +21,8 @@ const confirmChangeCard = () => {
 </script>
 
 <template>
-  <div v-if="card.isCardChanging === true">
-    <form action="" class="max-w-[400px] p-5 bg-gray-300 rounded-md">
+  <div v-if="card.isCardChanging === true" class="mb-2">
+    <form action="" class="max-w-full p-5 bg-gray-300 rounded-md">
       <input
         v-focus
         v-model.trim="title"
