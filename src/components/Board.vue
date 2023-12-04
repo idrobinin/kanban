@@ -5,6 +5,7 @@ import CreateCardForm from "./CreateCardForm.vue";
 import Card from "./Card.vue";
 import AddCardButton from "./AddCardButton.vue";
 import draggable from "vuedraggable";
+import { vAutoAnimate } from "@formkit/auto-animate";
 const mainStore = useMainStore();
 </script>
 
@@ -35,7 +36,12 @@ const mainStore = useMainStore();
             </div>
             <div class="pb-3 flex gap-2 flex-col">
               <div class="px-3 overflow-y-auto flex-1">
-                <draggable v-model="column.cards" group="cards" itemKey="name">
+                <draggable
+                  v-model="column.cards"
+                  v-auto-animate
+                  group="cards"
+                  itemKey="name"
+                >
                   <template #item="{ element }">
                     <Card :card="element" :card-list="column.name" />
                   </template>

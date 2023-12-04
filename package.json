@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.1",
     "@headlessui/vue": "^1.7.16",
     "@heroicons/vue": "^2.0.18",
     "axios": "^1.5.1",

@@ -5,7 +5,6 @@ import { getColumn } from "../hooks/getColumn.js";
 import { filterColumn } from "../hooks/filterColumn.js";
 
 export const useMainStore = defineStore("mainStore", () => {
-  const dbConnected = ref(false);
   const isShowCardForm = ref(false);
   const cardId = ref(100);
 
@@ -40,8 +39,7 @@ export const useMainStore = defineStore("mainStore", () => {
 
   const deleteCard = (columnName, card) => {
     const column = getColumn(columnName);
-    const filteredColumn = filterColumn(column, card.id);
-    column.cards = filteredColumn;
+    column.cards = filterColumn(column, card.id);
   };
 
   const sortByRating = (columnName) => {
@@ -74,6 +72,5 @@ export const useMainStore = defineStore("mainStore", () => {
     sortByRating,
     columns,
     isShowCardForm,
-    dbConnected,
   };
 });
